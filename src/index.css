@@ -1,0 +1,48 @@
+
+/* Styles généraux du site */
+
+:root {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #ffffff;
+  background-color: #100b20;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Réinitialisation des marges */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corps de la page */
+body {
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* Conteneur React */
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Titres */
+h1, h2, h3 {
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Liens */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Boutons */
+button {
+  font-family: inherit;
+  cursor: pointer;
+}

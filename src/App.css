@@ -1,0 +1,414 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0d0a19;
+  color: #f7f3ff;
+}
+
+button, input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 16px;
+  background:
+    radial-gradient(circle at 20% 10%, #36205b 0%, transparent 42%),
+    radial-gradient(circle at 90% 90%, #231540 0%, transparent 38%),
+    #0d0a19;
+}
+
+.quiz-card {
+  width: 100%;
+  max-width: 790px;
+  background: #191229;
+  border: 1px solid #493363;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 22px 80px #0006;
+}
+
+.entete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 23px 32px;
+  border-bottom: 1px solid #352647;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.logo span {
+  color: #d6b4ff;
+}
+
+.tag {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #b89bdb;
+  border: 1px solid #654b82;
+  border-radius: 50px;
+  padding: 8px 11px;
+}
+
+.accueil, .jeu, .resultat {
+  padding: 42px 44px 48px;
+}
+
+.accueil, .resultat {
+  text-align: center;
+}
+
+.hero-icon {
+  width: 86px;
+  height: 86px;
+  border-radius: 24px;
+  background: #34204d;
+  display: grid;
+  place-items: center;
+  font-size: 44px;
+  margin: 0 auto 25px;
+  box-shadow: 0 0 45px #8e5cd522;
+}
+
+.surtitre {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2.5px;
+  color: #b78bea;
+  margin: 0 0 14px;
+}
+
+h1 {
+  font-size: clamp(29px, 5vw, 43px);
+  line-height: 1.15;
+  letter-spacing: -1.3px;
+  margin: 0 0 16px;
+}
+
+h1 span {
+  color: #b887f4;
+}
+
+h2 {
+  font-size: 18px;
+  margin: 35px 0 17px;
+}
+
+.description {
+  max-width: 540px;
+  margin: 0 auto;
+  color: #bdb0d0;
+  line-height: 1.8;
+}
+
+.niveaux {
+  display: grid;
+  gap: 12px;
+  text-align: left;
+}
+
+.niveau {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #241a37;
+  border: 1px solid #4d3868;
+  color: white;
+  border-radius: 14px;
+  padding: 18px 20px;
+  text-align: left;
+  transition: 0.2s;
+}
+
+.niveau:hover {
+  border-color: #bd90ff;
+  background: #332248;
+  transform: translateY(-2px);
+}
+
+.emoji {
+  font-size: 25px;
+}
+
+.niveau strong {
+  font-size: 17px;
+}
+
+.niveau small {
+  margin-left: auto;
+  color: #b6a4cd;
+}
+
+.fleche {
+  color: #c7a1fb;
+  font-size: 22px;
+}
+
+.infos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  color: #c4b5d7;
+  font-size: 13px;
+}
+
+.pastille {
+  background: #382451;
+  color: #d6b1ff;
+  padding: 8px 13px;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+.progression {
+  background: #342544;
+  border-radius: 20px;
+  height: 9px;
+  overflow: hidden;
+  margin: 22px 0 34px;
+}
+
+.progression div {
+  height: 100%;
+  background: linear-gradient(90deg, #8e56dc, #d4a4ff);
+  border-radius: 20px;
+  transition: width 0.3s;
+}
+
+.titre-question {
+  font-size: clamp(23px, 4vw, 31px);
+  margin-bottom: 28px;
+}
+
+.propositions {
+  display: grid;
+  gap: 12px;
+}
+
+.proposition {
+  width: 100%;
+  display: flex;
+  gap: 13px;
+  align-items: center;
+  padding: 17px 18px;
+  text-align: left;
+  border-radius: 12px;
+  border: 1px solid #4a365f;
+  background: #261c38;
+  color: #eee6f8;
+  transition: 0.2s;
+  line-height: 1.5;
+}
+
+.proposition:hover:not(:disabled) {
+  background: #362449;
+  border-color: #ad7ee9;
+}
+
+.proposition.selectionnee {
+  border-color: #bc89ff;
+  background: #4b2b6a;
+}
+
+.proposition:disabled {
+  cursor: default;
+}
+
+.indicateur {
+  color: #cba0ff;
+  font-size: 21px;
+  flex-shrink: 0;
+}
+
+.champ {
+  width: 100%;
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid #654b80;
+  background: #261c38;
+  color: white;
+  outline: none;
+}
+
+.champ:focus {
+  border-color: #c59aff;
+}
+
+.champ::placeholder {
+  color: #a89ab9;
+}
+
+.retour {
+  margin-top: 20px;
+  padding: 16px 19px;
+  border-radius: 12px;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.retour p {
+  margin: 6px 0 0;
+}
+
+.succes {
+  background: #193a32;
+  border: 1px solid #3c8972;
+  color: #b9f2db;
+}
+
+.erreur {
+  background: #45263c;
+  border: 1px solid #9a5977;
+  color: #ffd1df;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.principal, .secondaire, .retour-accueil {
+  border-radius: 11px;
+  padding: 14px 20px;
+  border: none;
+}
+
+.principal {
+  color: #170d27;
+  background: #c79aff;
+  font-weight: bold;
+}
+
+.principal:hover:not(:disabled) {
+  background: #dfbcff;
+}
+
+.principal:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.retour-accueil {
+  background: transparent;
+  color: #b9a8d0;
+}
+
+.retour-accueil:hover {
+  color: white;
+}
+
+.secondaire {
+  color: #e8d8fa;
+  background: #342449;
+  border: 1px solid #71518c;
+}
+
+.secondaire:hover {
+  background: #49305f;
+}
+
+.score-final {
+  border: 1px solid #76569c;
+  background: #2b1c42;
+  border-radius: 18px;
+  margin: 28px auto;
+  padding: 25px;
+  max-width: 330px;
+}
+
+.score-final strong {
+  font-size: 65px;
+  color: #d4a8ff;
+}
+
+.score-final strong span {
+  font-size: 25px;
+  color: #c4b3d8;
+}
+
+.score-final p {
+  color: #cbb7df;
+  margin: 7px 0 0;
+}
+
+.encouragement {
+  color: #d9c3ef;
+}
+
+.actions-resultat {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+footer {
+  border-top: 1px solid #352647;
+  color: #8f7fa7;
+  padding: 19px;
+  text-align: center;
+  font-size: 12px;
+}
+
+@media (max-width: 560px) {
+  .entete {
+    padding: 19px;
+  }
+
+  .tag {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .accueil, .jeu, .resultat {
+    padding: 30px 20px 36px;
+  }
+
+  .niveau {
+    flex-wrap: wrap;
+    gap: 9px;
+  }
+
+  .niveau small {
+    margin-left: 0;
+  }
+
+  .fleche {
+    margin-left: auto;
+  }
+
+  .infos {
+    font-size: 11px;
+  }
+
+  .actions {
+    align-items: stretch;
+    flex-direction: column-reverse;
+  }
+
+  .principal, .retour-accueil {
+    width: 100%;
+  }
+}
