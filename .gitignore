@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+# Variables d'environnement et secrets
+.env
+.env.*
+!.env.example
+backend/.env
+.env
+server/node_modules/
